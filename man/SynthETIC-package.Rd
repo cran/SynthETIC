@@ -18,6 +18,14 @@ Creation of an individual claims simulator which generates various
     Taylor G, Wang M, Wong B (2020) "SynthETIC: an individual insurance claim
     simulator with feature control" <arXiv:2008.05693>.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/agi-lab/SynthETIC}
+  \item Report bugs at \url{https://github.com/agi-lab/SynthETIC/issues}
+}
+
+}
 \author{
 \strong{Maintainer}: Melantha Wang \email{wang.melantha@gmail.com}
 

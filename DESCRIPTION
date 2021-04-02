@@ -1,6 +1,6 @@
 Package: SynthETIC
 Title: Synthetic Experience Tracking Insurance Claims
-Version: 0.1.0
+Version: 1.0.0
 Authors@R: c(
     person("Benjamin", "Avanzi", role = "aut", email = "b.avanzi@unimelb.edu.au"),
     person("Greg", "Taylor", role = "aut", email = "greg_taylor60@hotmail.com"),
@@ -11,7 +11,7 @@ Author: Benjamin Avanzi [aut],
   Melantha Wang [aut, cre],
   Bernard Wong [aut]
 Maintainer: Melantha Wang <wang.melantha@gmail.com>
-Imports: stats, ggplot2, magrittr, rlang
+Imports: stats, ggplot2, magrittr, rlang, methods
 Description: Creation of an individual claims simulator which generates various
     features of non-life insurance claims. An initial set of test parameters,
     designed to mirror the experience of an Auto Liability portfolio, were set
@@ -25,12 +25,15 @@ Description: Creation of an individual claims simulator which generates various
     simulator with feature control" <arXiv:2008.05693>.
 License: GPL-3
 Encoding: UTF-8
+URL: https://github.com/agi-lab/SynthETIC
+BugReports: https://github.com/agi-lab/SynthETIC/issues
 LazyData: true
 RoxygenNote: 7.1.1
-Suggests: knitr, rmarkdown, dplyr, RColorBrewer
+Suggests: knitr, rmarkdown, dplyr, RColorBrewer, actuar, poisson,
+        ChainLadder
 VignetteBuilder: knitr
 Depends: R (>= 2.10)
 NeedsCompilation: no
-Packaged: 2020-08-21 11:23:06 UTC; melantha
+Packaged: 2021-04-02 10:27:04 UTC; melantha
 Repository: CRAN
-Date/Publication: 2020-08-24 15:50:30 UTC
+Date/Publication: 2021-04-02 12:10:02 UTC
