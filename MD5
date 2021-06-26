@@ -1,6 +1,6 @@
-79a68d00b9b16ec7dbf1b14a4da8da59 *DESCRIPTION
+ec0db5c62bc0c8f8dabc8237b7250971 *DESCRIPTION
 5525e7e07454068649606ade61489990 *NAMESPACE
-b5a436457cb4d4f89d81ec206f674c66 *NEWS.md
+1f677cb71d294cbccf0b71718f689976 *NEWS.md
 e0ef681901465d24f47f9139cb2c086a *R/SynthETIC-package.R
 08e93f9209d9ab92e6d5f81157316fd5 *R/claims_class.R
 ff3c38829c8ec22f866e2e5addb13feb *R/data.R
@@ -12,7 +12,7 @@ dc99d4abf9a4b9b795643540798f074b *R/features_02_claim_size.R
 c560242811ac69222179e6edfcb66230 *R/features_06_claim_payment_size.R
 4e8a506c58fff55f0412653861103514 *R/features_07_claim_payment_time.R
 3e765abc97039df6010813b8d1aed9dd *R/features_08_claim_inflation.R
-f03716bfa070000d605dbdd4def9e35d *R/output.R
+4d243989a8a26503458ed0f18e66696b *R/output.R
 a85f06cfc1326d4f16a13c72ca1b9813 *R/parameters.R
 f57e04f7c6207a0a7b8e7855849b8e34 *R/stats.R
 7a9f28582b9fb575228bfc624fd817ca *R/to_SynthETIC.R
@@ -20,15 +20,15 @@ f57e04f7c6207a0a7b8e7855849b8e34 *R/stats.R
 8002aa23335dc9ed2352b201e86b1b65 *data/test_claim_dataset.rda
 bb5ed5bef9f09ed6811e60ea9cee3c8d *data/test_claims_object.rda
 3cf9c29e8d8e1cad4941cfdbba0c0c1a *data/test_transaction_dataset.rda
-6cccbe811f6b6665d2860d595c4c1c5c *inst/doc/SynthETIC-demo.R
-99b3880a1970e37bc83696dc786be784 *inst/doc/SynthETIC-demo.Rmd
-45c0bb643c4e3ef34ee9c2eb5f183f48 *inst/doc/SynthETIC-demo.html
+a54eed66984eee4a3367b33bcf765069 *inst/doc/SynthETIC-demo.R
+d49745c9bd0e6109b5143d2690a06189 *inst/doc/SynthETIC-demo.Rmd
+6fff1f63ea5af344d0e435c9189da8ce *inst/doc/SynthETIC-demo.html
 d593f922bfa84178adf6c680af8c0711 *man/SynthETIC-package.Rd
 ef2b36e8faa7207bdf054d4ceb42762b *man/claim_closure.Rd
 a9b05bb0165f99909557f19175edc502 *man/claim_frequency.Rd
 6ef0816c7cf3e9e5f3bb576dd5cdf364 *man/claim_notification.Rd
 bfab9e339ad56e1e07e002c3b77a8814 *man/claim_occurrence.Rd
-b26d519b8cdf74af3aac05594d53755e *man/claim_output.Rd
+9fb27cb08b6a9ee99b5b1842e49a6424 *man/claim_output.Rd
 28a041410668c821c8e5b49615fabc2e *man/claim_payment_delay.Rd
 6fffb442931365ea96de943fcb878cb5 *man/claim_payment_inflation.Rd
 cc564b0bf72350f3bee6400e2f9e250e *man/claim_payment_no.Rd
@@ -49,4 +49,4 @@ abc9ba333f6d0651193d52b4688713c7 *man/simulate_cdf.Rd
 5d7f89ff0061302aeb7337640bae0a4f *man/test_claims_object.Rd
 5997913b05578d209520384cacbd4927 *man/test_transaction_dataset.Rd
 1134c11c9783f5c276e30d0a32239a85 *man/to_SynthETIC.Rd
-99b3880a1970e37bc83696dc786be784 *vignettes/SynthETIC-demo.Rmd
+d49745c9bd0e6109b5143d2690a06189 *vignettes/SynthETIC-demo.Rmd

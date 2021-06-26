@@ -594,7 +594,8 @@ str(test_transaction_dataset)
 #    payment_size_list = ,
 #    aggregate_level = 1,
 #    incremental = TRUE,
-#    future = TRUE
+#    future = TRUE,
+#    adjust = TRUE
 #  )
 
 ## -----------------------------------------------------------------------------
