@@ -626,10 +626,14 @@ claim_output(n_vector, payment_times, payment_sizes, aggregate_level = 4)
 cumtri <- claim_output(n_vector, payment_times, payment_sizes,
                        aggregate_level = 4, incremental = FALSE, future = FALSE)
 # calculate the age to age factors
-selected <- attr(ChainLadder::ata(cumtri), "vwtd")
+selected <- vector()
+J <- nrow(cumtri)
+for (i in 1:(J - 1)) {
+  # use volume weighted age to age factors
+  selected[i] <- sum(cumtri[, (i + 1)], na.rm = TRUE) / sum(cumtri[1:(J - i), i], na.rm = TRUE)
+}
 # complete the triangle
 CL_prediction <- cumtri
-J <- nrow(cumtri)
 for (i in 2:J) {
   for (j in (J - i + 2):J) {
     CL_prediction[i, j] <- CL_prediction[i, j - 1] * selected[j - 1]

@@ -1,6 +1,6 @@
 Package: SynthETIC
 Title: Synthetic Experience Tracking Insurance Claims
-Version: 1.0.2
+Version: 1.0.4
 Authors@R: c(
     person("Benjamin", "Avanzi", role = "aut", email = "b.avanzi@unimelb.edu.au"),
     person("Greg", "Taylor", role = "aut", email = "greg_taylor60@hotmail.com"),
@@ -28,12 +28,11 @@ Encoding: UTF-8
 URL: https://github.com/agi-lab/SynthETIC
 BugReports: https://github.com/agi-lab/SynthETIC/issues
 LazyData: true
-RoxygenNote: 7.1.1
-Suggests: knitr, rmarkdown, dplyr, RColorBrewer, actuar, poisson,
-        ChainLadder
+RoxygenNote: 7.1.2
+Suggests: knitr, rmarkdown, dplyr, RColorBrewer, actuar, poisson
 VignetteBuilder: knitr
 Depends: R (>= 2.10)
 NeedsCompilation: no
-Packaged: 2021-08-30 05:20:48 UTC; melantha
+Packaged: 2023-04-15 23:15:25 UTC; melantha
 Repository: CRAN
-Date/Publication: 2021-09-02 23:00:13 UTC
+Date/Publication: 2023-04-16 07:50:06 UTC
