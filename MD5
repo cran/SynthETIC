@@ -1,6 +1,6 @@
-2ca10a212d05c28d5b4ad5c40f529c32 *DESCRIPTION
+a53999054e0ce490ce646ca3ae59f61b *DESCRIPTION
 110d8e3360fa85a5468529ebbee78b2f *NAMESPACE
-c311aaa2f3ab73dea07c44006584a0b5 *NEWS.md
+43ba5f07e87cb0b60b2e50aba4e625f0 *NEWS.md
 e0ef681901465d24f47f9139cb2c086a *R/SynthETIC-package.R
 08e93f9209d9ab92e6d5f81157316fd5 *R/claims_class.R
 ff3c38829c8ec22f866e2e5addb13feb *R/data.R
@@ -21,9 +21,9 @@ f57e04f7c6207a0a7b8e7855849b8e34 *R/stats.R
 bb5ed5bef9f09ed6811e60ea9cee3c8d *data/test_claims_object.rda
 3cf9c29e8d8e1cad4941cfdbba0c0c1a *data/test_transaction_dataset.rda
 c69b62da3d1921b9ca8a93bc9d2dcdc3 *inst/CITATION
-0fa81e4adec80391cd420a52d616956c *inst/doc/SynthETIC-demo.R
-da0f26d127246e82cd99c2aaf90ce473 *inst/doc/SynthETIC-demo.Rmd
-07e7d3e069d6d64bff268478b67e5507 *inst/doc/SynthETIC-demo.html
+f8902694c13acde603dced8d89d72a46 *inst/doc/SynthETIC-demo.R
+74627a8a1c5c0f3004a1617fcb163f11 *inst/doc/SynthETIC-demo.Rmd
+058976261defffeca39abcf30a74f984 *inst/doc/SynthETIC-demo.html
 a9a8b2abd8078397d668bfc8023178f6 *man/SynthETIC-package.Rd
 ef2b36e8faa7207bdf054d4ceb42762b *man/claim_closure.Rd
 a9b05bb0165f99909557f19175edc502 *man/claim_frequency.Rd
@@ -51,4 +51,4 @@ abc9ba333f6d0651193d52b4688713c7 *man/simulate_cdf.Rd
 5d7f89ff0061302aeb7337640bae0a4f *man/test_claims_object.Rd
 5997913b05578d209520384cacbd4927 *man/test_transaction_dataset.Rd
 1134c11c9783f5c276e30d0a32239a85 *man/to_SynthETIC.Rd
-da0f26d127246e82cd99c2aaf90ce473 *vignettes/SynthETIC-demo.Rmd
+74627a8a1c5c0f3004a1617fcb163f11 *vignettes/SynthETIC-demo.Rmd

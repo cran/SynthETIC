@@ -73,7 +73,17 @@ rnhpp.count <- function(no_periods) {
     # e.g. cyclical Poisson process
     0.03 * (sin(x * pi / 2) / 4 + 1)
   }
-  claim_times <- poisson::nhpp.event.times(rate, no_periods * rate * 2, intensity)
+  lambda_max <- 0.03 * (1/4 + 1)
+  target_num_events <- no_periods * rate * lambda_max
+  
+  # simulate a homogeneous Poisson process
+  N <- stats::rpois(1, target_num_events)              # total number of events
+  event_times <- sort(stats::runif(N, 0, no_periods))  # random times of occurrence
+  
+  # use a thinning step to turn this into a non-homogeneous process
+  accept_probs <- intensity(event_times) / lambda_max
+  is_accepted <- (stats::runif(N) < accept_probs)
+  claim_times <- event_times[is_accepted]
   
   as.numeric(table(cut(claim_times, breaks = 0:no_periods)))
 }
@@ -84,21 +94,19 @@ plot(x = 1:I, y = n_vector_tmp, type = "l",
      xlab = "Occurrence period", ylab = "# Claims")
 
 ## -----------------------------------------------------------------------------
-rate_tmp <- 3000
-intensity_tmp <- function(x) {
-  # e.g. cyclical Poisson process
-  0.03 * (sin(x * pi / 2) / 4 + 1)
-}
-x_tmp <- poisson::nhpp.event.times(rate_tmp, I * rate_tmp, intensity_tmp)
-event_times_tmp <- x_tmp[x_tmp <= I]
+# Equivalent to a Poisson process
+event_times_tmp <- sort(stats::runif(n = 4000, 0, I))
+accept_probs_tmp <- (sin(event_times_tmp * pi / 2) + 1) / 2
+is_accepted_tmp <- (stats::runif(length(event_times_tmp)) < accept_probs_tmp)
+claim_times_tmp <- event_times_tmp[is_accepted_tmp]
 
 # Number of claims occurring for each period i
 # by counting the number of event times in each interval (i, i + 1)
-n_vector_tmp <- as.numeric(table(cut(event_times_tmp, breaks = 0:I)))
+n_vector_tmp <- as.numeric(table(cut(claim_times_tmp, breaks = 0:I)))
 n_vector_tmp
 
 # Occurrence time of each claim r, for each period i
-occurrence_times_tmp <- to_SynthETIC(x = event_times_tmp, 
+occurrence_times_tmp <- to_SynthETIC(x = claim_times_tmp, 
                                      frequency_vector = n_vector_tmp)
 occurrence_times_tmp[[1]]
 
