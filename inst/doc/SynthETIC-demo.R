@@ -1,11 +1,11 @@
-## ---- include = FALSE---------------------------------------------------------
+## ----include = FALSE----------------------------------------------------------
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
 
-## ---- eval=FALSE--------------------------------------------------------------
-#  citation("SynthETIC")
+## ----eval=FALSE---------------------------------------------------------------
+# citation("SynthETIC")
 
 ## -----------------------------------------------------------------------------
 library(SynthETIC)
@@ -186,17 +186,17 @@ plot(ecdf(unlist(claim_sizes_GLM)), xlim = c(0, 2000000),
      xlab = "Individual claim size")
 
 ## ----eval=FALSE---------------------------------------------------------------
-#  # install.packages("CASdatasets", repos = "http://cas.uqam.ca/pub/", type = "source")
-#  library(CASdatasets)
-#  data("ausautoBI8999")
-#  boot <- sample(ausautoBI8999$AggClaim, size = sum(n_vector), replace = TRUE)
-#  claim_sizes_bootstrap <- to_SynthETIC(boot, frequency_vector = n_vector)
+# # install.packages("CASdatasets", repos = "https://cas.uqam.ca/pub/", type = "source")
+# library(CASdatasets)
+# data("ausautoBI8999")
+# boot <- sample(ausautoBI8999$AggClaim, size = sum(n_vector), replace = TRUE)
+# claim_sizes_bootstrap <- to_SynthETIC(boot, frequency_vector = n_vector)
 
 ## ----eval=FALSE---------------------------------------------------------------
-#  sim_boot <- function(n) {
-#    sample(ausautoBI8999$AggClaim, size = n, replace = TRUE)
-#  }
-#  claim_sizes_bootstrap <- claim_size(frequency_vector = n_vector, simfun = sim_boot)
+# sim_boot <- function(n) {
+#   sample(ausautoBI8999$AggClaim, size = n, replace = TRUE)
+# }
+# claim_sizes_bootstrap <- claim_size(frequency_vector = n_vector, simfun = sim_boot)
 
 ## -----------------------------------------------------------------------------
 ## input
@@ -354,8 +354,8 @@ no_payments <- claim_payment_no(n_vector, claim_sizes, rfun = rmixed_payment_no,
                                 claim_size_benchmark_2 = 0.075 * ref_claim)
 no_payments[[1]]
 
-## ---- eval=FALSE--------------------------------------------------------------
-#  no_payments <- claim_payment_no(n_vector, claim_sizes)
+## ----eval=FALSE---------------------------------------------------------------
+# no_payments <- claim_payment_no(n_vector, claim_sizes)
 
 ## -----------------------------------------------------------------------------
 no_payments_tmp <- claim_payment_no(n_vector, claim_sizes,
@@ -450,8 +450,8 @@ payment_sizes <- claim_payment_size(n_vector, claim_sizes, no_payments,
                                     rfun = rmixed_payment_size)
 payment_sizes[[1]][[1]]
 
-## ---- eval=FALSE--------------------------------------------------------------
-#  payment_sizes <- claim_payment_size(n_vector, claim_sizes, no_payments)
+## ----eval=FALSE---------------------------------------------------------------
+# payment_sizes <- claim_payment_size(n_vector, claim_sizes, no_payments)
 
 ## -----------------------------------------------------------------------------
 ## input
@@ -598,16 +598,16 @@ str(transaction_dataset)
 ## -----------------------------------------------------------------------------
 str(test_transaction_dataset)
 
-## ---- eval=FALSE--------------------------------------------------------------
-#  claim_output(
-#    frequency_vector = ,
-#    payment_time_list = ,
-#    payment_size_list = ,
-#    aggregate_level = 1,
-#    incremental = TRUE,
-#    future = TRUE,
-#    adjust = TRUE
-#  )
+## ----eval=FALSE---------------------------------------------------------------
+# claim_output(
+#   frequency_vector = ,
+#   payment_time_list = ,
+#   payment_size_list = ,
+#   aggregate_level = 1,
+#   incremental = TRUE,
+#   future = TRUE,
+#   adjust = TRUE
+# )
 
 ## -----------------------------------------------------------------------------
 # 1. Constant dollar value INCREMENTAL triangle
@@ -659,51 +659,51 @@ plot(test_claims_object, adjust = FALSE)
 # plot by occurrence and development years
 plot(test_claims_object, by_year = TRUE)
 
-## ---- eval = FALSE------------------------------------------------------------
-#  times <- 100
-#  results_all <- vector("list")
-#  for (i in 1:times) {
-#    # Module 1: Claim occurrence
-#    n_vector <- claim_frequency(I, E, lambda)
-#    occurrence_times <- claim_occurrence(n_vector)
-#    # Module 2: Claim size
-#    claim_sizes <- claim_size(n_vector, S_df, type = "p", range = c(0, 1e24))
-#    # Module 3: Claim notification
-#    notidel <- claim_notification(n_vector, claim_sizes, paramfun = notidel_param)
-#    # Module 4: Claim settlement
-#    setldel <- claim_closure(n_vector, claim_sizes, paramfun = setldel_param)
-#    # Module 5: Claim payment count
-#    no_payments <- claim_payment_no(n_vector, claim_sizes, rfun = rmixed_payment_no,
-#                                    claim_size_benchmark_1 = 0.0375 * ref_claim,
-#                                    claim_size_benchmark_2 = 0.075 * ref_claim)
-#    # Module 6: Claim payment size
-#    payment_sizes <- claim_payment_size(n_vector, claim_sizes, no_payments,
-#                                        rfun = rmixed_payment_size)
-#    # Module 7: Claim payment time
-#    payment_delays <- claim_payment_delay(n_vector, claim_sizes, no_payments, setldel,
-#                                          rfun = r_pmtdel, paramfun = param_pmtdel,
-#                                          occurrence_period = rep(1:I, times = n_vector))
-#    payment_times <- claim_payment_time(n_vector, occurrence_times, notidel, payment_delays)
-#    # Module 8: Claim inflation
-#    payment_inflated <- claim_payment_inflation(
-#      n_vector, payment_sizes, payment_times, occurrence_times,
-#      claim_sizes, base_inflation_vector, SI_occurrence, SI_payment)
-#  
-#    results_all[[i]] <- generate_transaction_dataset(
-#      claims(
-#        frequency_vector = n_vector,
-#        occurrence_list = occurrence_times,
-#        claim_size_list = claim_sizes,
-#        notification_list = notidel,
-#        settlement_list = setldel,
-#        no_payments_list = no_payments,
-#        payment_size_list = payment_sizes,
-#        payment_delay_list = payment_delays,
-#        payment_time_list = payment_times,
-#        payment_inflated_list = payment_inflated),
-#      # adjust = FALSE to retain the original simulated times
-#      adjust = FALSE)
-#  }
+## ----eval = FALSE-------------------------------------------------------------
+# times <- 100
+# results_all <- vector("list")
+# for (i in 1:times) {
+#   # Module 1: Claim occurrence
+#   n_vector <- claim_frequency(I, E, lambda)
+#   occurrence_times <- claim_occurrence(n_vector)
+#   # Module 2: Claim size
+#   claim_sizes <- claim_size(n_vector, S_df, type = "p", range = c(0, 1e24))
+#   # Module 3: Claim notification
+#   notidel <- claim_notification(n_vector, claim_sizes, paramfun = notidel_param)
+#   # Module 4: Claim settlement
+#   setldel <- claim_closure(n_vector, claim_sizes, paramfun = setldel_param)
+#   # Module 5: Claim payment count
+#   no_payments <- claim_payment_no(n_vector, claim_sizes, rfun = rmixed_payment_no,
+#                                   claim_size_benchmark_1 = 0.0375 * ref_claim,
+#                                   claim_size_benchmark_2 = 0.075 * ref_claim)
+#   # Module 6: Claim payment size
+#   payment_sizes <- claim_payment_size(n_vector, claim_sizes, no_payments,
+#                                       rfun = rmixed_payment_size)
+#   # Module 7: Claim payment time
+#   payment_delays <- claim_payment_delay(n_vector, claim_sizes, no_payments, setldel,
+#                                         rfun = r_pmtdel, paramfun = param_pmtdel,
+#                                         occurrence_period = rep(1:I, times = n_vector))
+#   payment_times <- claim_payment_time(n_vector, occurrence_times, notidel, payment_delays)
+#   # Module 8: Claim inflation
+#   payment_inflated <- claim_payment_inflation(
+#     n_vector, payment_sizes, payment_times, occurrence_times,
+#     claim_sizes, base_inflation_vector, SI_occurrence, SI_payment)
+# 
+#   results_all[[i]] <- generate_transaction_dataset(
+#     claims(
+#       frequency_vector = n_vector,
+#       occurrence_list = occurrence_times,
+#       claim_size_list = claim_sizes,
+#       notification_list = notidel,
+#       settlement_list = setldel,
+#       no_payments_list = no_payments,
+#       payment_size_list = payment_sizes,
+#       payment_delay_list = payment_delays,
+#       payment_time_list = payment_times,
+#       payment_inflated_list = payment_inflated),
+#     # adjust = FALSE to retain the original simulated times
+#     adjust = FALSE)
+# }
 
 ## ----dpi=150, fig.width=7, fig.height=6, out.width=650------------------------
 start.time <- proc.time()
@@ -744,6 +744,6 @@ plot(all_claims, adjust = FALSE) +
   ggplot2::labs(subtitle = paste("With", times, "simulations"))
 proc.time() - start.time
 
-## ---- eval=FALSE--------------------------------------------------------------
-#  plot(claims, by_year = , inflated = , adjust = )
+## ----eval=FALSE---------------------------------------------------------------
+# plot(claims, by_year = , inflated = , adjust = )
 
